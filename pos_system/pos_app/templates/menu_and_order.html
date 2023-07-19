@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu and Order</title>
+</head>
+<body>
+    <h1>Menu and Order</h1>
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    <form method="POST" action="{% url 'menu_and_order' %}">
+        {% csrf_token %}
+        <label for="choice">Enter the item number to add to the cart (or 'q' to quit):</label>
+        <input type="text" id="choice" name="choice" required><br><br>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required><br><br>
+        <input type="submit" value="Add to Cart">
+    </form>
+    <h2>Menu:</h2>
+    <ul>
+        {% for product in products %}
+            <li>{{ product.name }} - Price: P{{ product.price }} - Stock: {{ product.stock }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Cart:</h2>
+    <ul>
+        {% for item in cart %}
+            <li>{{ item.1 }} - Price: P{{ item.2 }} - Quantity: {{ item.3 }}</li>
+        {% endfor %}
+    </ul>
+    <p>Total: P{{ total }}</p>
+    <a href="{% url 'main_menu' %}">Back to Main Menu</a>
+</body>
+</html>

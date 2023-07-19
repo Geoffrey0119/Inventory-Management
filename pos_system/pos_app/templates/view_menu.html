@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Item Menu</title>
+</head>
+<body>
+    <h1>Item Menu</h1>
+    <ol>
+        {% for product in products %}
+            <li>{{ forloop.counter }}. {{ product.name }}: P{{ product.price }} (Stock: {{ product.stock }})</li>
+        {% endfor %}
+    </ol>
+</body>
+</html>
+
+
+
+
+

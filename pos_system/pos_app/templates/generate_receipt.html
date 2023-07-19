@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Receipt</title>
+</head>
+<body>
+    <h1>Generate Receipt</h1>
+    <h2>Cart:</h2>
+    <ul>
+        {% for item in cart %}
+            <li>{{ item.1 }} - Price: P{{ item.2 }} - Quantity: {{ item.3 }}</li>
+        {% endfor %}
+    </ul>
+    <p>Total: P{{ total }}</p>
+    <a href="{% url 'main_menu' %}">Back to Main Menu</a>
+</body>
+</html>

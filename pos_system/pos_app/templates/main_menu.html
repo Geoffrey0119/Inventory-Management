@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main Menu</title>
+</head>
+<body>
+    <h1>Main Menu</h1>
+    <ul>
+        <li><a href="{% url 'add_item_menu' %}">1. Add Item to Menu</a></li>
+        <li><a href="{% url 'view_menu' %}">2. View Item Menu</a></li>
+        <li><a href="{% url 'remove_item_menu' %}">3. Remove Item from Menu</a></li>
+        <li><a href="{% url 'menu_and_order' %}">4. Place Order</a></li>
+        <li><a href="{% url 'inventory_management' %}">Inventory Management</a></li>
+        <li><a href="{% url 'sales_order_analytics' %}">Sales Order Analytics</a></li>
+        <li><a href="{% url 'home' %}">5. Exit</a></li>
+    </ul>
+</body>
+</html>

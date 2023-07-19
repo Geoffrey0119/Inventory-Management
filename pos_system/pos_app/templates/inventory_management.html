@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Management</title>
+</head>
+<body>
+    <h1>Inventory Management</h1>
+    <form method="POST" action="{% url 'inventory_management' %}">
+        {% csrf_token %}
+        <label for="action">Select an action:</label>
+        <select id="action" name="action">
+            <option value="add_product">Add Product</option>
+            <option value="remove_product">Remove Product</option>
+            <option value="edit_product">Edit Product</option>
+            <option value="view_inventory">View Inventory</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+    <a href="{% url 'main_menu' %}">Back to Main Menu</a>
+</body>
+</html>
